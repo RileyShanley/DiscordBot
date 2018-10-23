@@ -1,6 +1,7 @@
 package com.ACM.DiscordBot;
 
 import java.util.Calendar;
+import java.util.Random;
 import java.time.ZonedDateTime;
 import java.util.Calendar;
 
@@ -9,18 +10,12 @@ import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
+import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 public class App extends ListenerAdapter {
-	// private Date party;
-
-	// public void MeetingDate() {
-	// Calendar c = Calendar.getInstance();
-	// c.setTime(ZonedDateTime.now());
-	// int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
-	// }
 
 	public static void main(String[] args) throws Exception {
 		JDA jda = new JDABuilder(AccountType.BOT).setToken(Ref.token).build();
@@ -28,22 +23,31 @@ public class App extends ListenerAdapter {
 
 	}// end of main
 
+	public int numberShowing;
+
+	public int roll() {
+		Random random = new Random();
+		return numberShowing = random.nextInt(6) + 1;
+	}
+
 	@Override
 	public void onMessageReceived(MessageReceivedEvent evt) {
 		// objects
 		User objUser = evt.getAuthor();
 		MessageChannel objMsgCh = evt.getChannel();
 		Message objMsg = evt.getMessage();
+		//Guild objRole = evt.getGuild();
 
 		// commands
 		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "hi") && !objUser.isBot()) {
-			objMsgCh.sendMessage(" !hi").queue();
+			objMsgCh.sendMessage("hi").queue();
 		}
-		// if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "setDate")) {
-		// }
-		// if(ZonedDateTime.now().equals(2018/22/10)) {
-		// objMsgCh.sendMessage(" it is today").queue();
-		// }
-
+		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "roll")) {
+			objMsgCh.sendMessage(objUser.getAsMention() + " you rolled " + roll()).queue();
+		}
+//		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "test") && objRole.get) {
+//			objMsgCh.sendMessage("test worked").queue();
+//		}
+		
 	}
 }
