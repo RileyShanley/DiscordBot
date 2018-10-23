@@ -42,7 +42,7 @@ public class App extends ListenerAdapter {
 		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "hi") && !objUser.isBot()) {
 			objMsgCh.sendMessage("hi").queue();
 		}
-		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "roll")) {
+		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "roll") && !objUser.isBot()) {
 			objMsgCh.sendMessage(objUser.getAsMention() + " you rolled " + roll()).queue();
 		}
 //		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "test") && objRole.get) {
