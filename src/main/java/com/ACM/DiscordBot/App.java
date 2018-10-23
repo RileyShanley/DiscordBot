@@ -36,7 +36,7 @@ public class App extends ListenerAdapter {
 		Message objMsg = evt.getMessage();
 
 		// commands
-		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "hi")) {
+		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "hi") && !objUser.isBot()) {
 			objMsgCh.sendMessage(" !hi").queue();
 		}
 		// if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "setDate")) {
@@ -44,5 +44,6 @@ public class App extends ListenerAdapter {
 		// if(ZonedDateTime.now().equals(2018/22/10)) {
 		// objMsgCh.sendMessage(" it is today").queue();
 		// }
+
 	}
 }
