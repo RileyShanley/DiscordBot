@@ -22,6 +22,8 @@ public class App extends ListenerAdapter {
 //		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
 //	}
 
+
+	
 	public static void main(String[] args) throws Exception {
 		JDA jda = new JDABuilder(AccountType.BOT).setToken(Ref.token).build();
 		jda.addEventListener(new App());
@@ -41,8 +43,8 @@ public class App extends ListenerAdapter {
 		}
 		//if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "setDate")) {
 		//}
-		if(ZonedDateTime.now().equals(2018/22/10)) {
-			objMsgCh.sendMessage(" it is today").queue();
-		}
+//		if(ZonedDateTime.now().equals(2018/22/10)) {
+//			objMsgCh.sendMessage(" it is today").queue();
+//		}
 	}
 }
