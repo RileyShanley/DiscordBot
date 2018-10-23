@@ -1,6 +1,6 @@
 package com.ACM.DiscordBot;
 
-java.util.Calendar;
+import java.util.Calendar;
 import java.time.ZonedDateTime;
 import java.util.Calendar;
 
@@ -16,11 +16,11 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 public class App extends ListenerAdapter {
 	//private Date party;
 	
-	public void MeetingDate() {
-		Calendar c = Calendar.getInstance();
-		c.setTimeZone(ZonedDateTime.now());
-		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
-	}
+//	public void MeetingDate() {
+//		Calendar c = Calendar.getInstance();
+//		c.setTime(ZonedDateTime.now());
+//		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+//	}
 
 	public static void main(String[] args) throws Exception {
 		JDA jda = new JDABuilder(AccountType.BOT).setToken(Ref.token).build();
