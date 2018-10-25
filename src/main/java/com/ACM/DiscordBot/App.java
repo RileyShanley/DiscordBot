@@ -36,7 +36,7 @@ public class App extends ListenerAdapter {
 		User objUser = evt.getAuthor();
 		MessageChannel objMsgCh = evt.getChannel();
 		Message objMsg = evt.getMessage();
-		//Guild objRole = evt.getGuild();
+		// Role objRole;
 
 		// commands
 		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "hi") && !objUser.isBot()) {
@@ -45,8 +45,8 @@ public class App extends ListenerAdapter {
 		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "roll") && !objUser.isBot()) {
 			objMsgCh.sendMessage(objUser.getAsMention() + " you rolled " + roll()).queue();
 		}
-//		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "test") && objRole.get) {
-//			objMsgCh.sendMessage("test worked").queue();
+//		if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "test")) {
+//	objUser.getId().
 //		}
 		
 	}
